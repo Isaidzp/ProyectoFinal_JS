@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+input{
+    background-color: #7DD3FC1A;
+    border-radius: 5px;
+    margin:15px 0 15px 5px;
+    padding: 5px;
+}
+
+section{
+    width: 80vw;
+    height: 20vh;
+    float: left;
+}
