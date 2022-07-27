@@ -1,11 +1,9 @@
 "use strict"
 
-const d = document
+const input_todo = document.getElementById('input_todo')
+const pokemon_button = document.getElementById('pokemon_indiv')
 
-const input_todo = d.getElementById('input_todo')
-const btn_add = d.getElementById('buscar')
-
-const url = 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0'
+const url = 'https://pokeapi.co/api/v2/pokemon?limit=102&offset=0'
 
 const getData = () => {
     fetch(url)
@@ -16,6 +14,7 @@ const getData = () => {
             data.results.forEach(element => {
                 fetch(element.url)
                     .then((response) => {
+                        
                         return response.json()
                             .then((response) => {
                                 console.log(response);
@@ -25,17 +24,14 @@ const getData = () => {
                                 // info.innerHTML = response.height
 
                                 const card = document.createElement("div");
-                                card.classList.add("col-sm-2", "d-flex", "flex-column", "articulo", "p-1");
+                                card.classList.add("col-md-4", "col-sm-6", "d-flex", "flex-column", "articulo", "p-3", "tarjetas");
                                 card.innerHTML = `
-                                <img class="border border-danger border-4 rounded-4" src="${response.sprites.front_default}">
-                                <h1> Name:${response.name}</h2> 
-                                <h2> height:${response.height}</h2> 
-        
-                                `;
-                                
+                                <img class="imgPok border border-danger border-4 rounded-4" src="${response.sprites.front_default}">
+                                <h3 class="datosPok"> Name: ${response.name}</h3> 
+                                <h4 class="datosPok"> ID: ${response.id}</h4> 
+                                `;               
                                 // pokemon_todo.appendChild(sprite);
-                                pokemon_todo.appendChild(card)
-                                
+                                pokemon_todo.appendChild(card)       
                             })
                     })
                     .catch((error) => {
@@ -48,4 +44,17 @@ const getData = () => {
         })
 }
 
+const printPokemon = () => {
+    const btn_search = document.createElement('button')
+    btn_search.classList.add("btn", "btn-primary")
+    btn_search.textContent = 'Search'
+
+    btn_search.addEventListener('click', () => {
+        console.log();
+      })
+
+    pokemon_button.appendChild(btn_search)
+}
+
 getData()
+printPokemon()
