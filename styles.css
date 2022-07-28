@@ -3,7 +3,11 @@
 * {
     margin: 0;
     padding: 0;
+}
+
+body{
     font-family: 'Sansita Swashed', cursive;
+    color: white;
 }
 
 /* SECTION DONDE SE ENCUENTRAN TODOS LOS POKEMON */
@@ -11,9 +15,8 @@ section {
     width: 70%;
     height: 100vh;
     float: left;
-    background-color: #E7D9FA;
-    /* background: rgb(114, 144, 196);
-    background: linear-gradient(94deg, rgba(114, 144, 196, 1) 0%, rgba(183, 118, 255, 1) 100%); */
+    background: rgb(255,112,112);
+background: linear-gradient(90deg, rgba(255,112,112,1) 0%, rgba(246,36,36,1) 100%);
     overflow: scroll;
 }
 
@@ -33,8 +36,6 @@ aside {
     height: 100vh;
     float: right;
     background-color: #E5D3FB;
-    /* background: rgb(62, 92, 145);
-    background: linear-gradient(94deg, rgba(62, 92, 145, 1) 0%, rgba(140, 58, 231, 1) 100%); */
     background-image: url(/JAVASCRIPT/PROYECTO_JS_AVANZADO/ProyectoFinal_JS/fondoPoke.jpg);
     background-size: cover;
 }
@@ -85,15 +86,21 @@ input {
 
 @media screen and (max-width: 590px) {
     section {
-        width: 50%;
+        width: 0%;
         /* height: 85vh;  */
         height: 100vh;
         /* float: none; */
+        display: none;
+    }
+
+    .row{
+        display: none;
     }
 
     aside {
-        width: 50%;
+        width: 100%;
         height: 100vh;
+        float: none;
         /* flex-direction: column;
         flex-wrap: nowrap;
         float: none;
