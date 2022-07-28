@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Dancing+Script&family=Indie+Flower&family=Merriweather:ital@1&family=Sansita+Swashed&family=Shadows+Into+Light&family=Uchen&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sansita Swashed', cursive;
+    background-color: #E7D9FA;
+}
+
+/* SECTION DONDE SE ENCUENTRAN TODOS LOS POKEMON */
+section {
+    width: 70%;
+    height: 100vh;
+    float: left;
+    background-color: #E7D9FA;
+    /* background: rgb(114, 144, 196);
+    background: linear-gradient(94deg, rgba(114, 144, 196, 1) 0%, rgba(183, 118, 255, 1) 100%); */
+    overflow: scroll;
+}
+
+.imgPok {
+    width: 100px;
+}
+
+.imgPok:hover {
+    transform: scale(1.5);
+    transition: 0.5s;
+}
+
+/* LADO PARA HACEER BUSQUEDAS DE POKEMON */
+
+aside {
+    width: 30%;
+    height: 100vh;
+    float: right;
+    background-color: #E5D3FB;
+    /* background: rgb(62, 92, 145);
+    background: linear-gradient(94deg, rgba(62, 92, 145, 1) 0%, rgba(140, 58, 231, 1) 100%); */
+    /* background-image: url(/JAVASCRIPT/PROYECTO_JS_AVANZADO/ProyectoFinal_JS/imagen_de_ios.jpg); */
+}
+
+input {
+    background-color: #dfd5d51a;
+    color: black;
+    border-radius: 5px;
+    margin: 15px 0 15px 5px;
+    padding: 5px;
+    width: 70%;
+}
+
+::placeholder{
+    color: black;
+}
+
+.imgAside{
+    width: 200px;
+}
