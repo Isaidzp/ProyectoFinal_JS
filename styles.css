@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: ;
 }
 
 body{
@@ -36,8 +37,9 @@ aside {
     height: 100vh;
     float: right;
     background-color: #E5D3FB;
-    background-image: url(/JAVASCRIPT/PROYECTO_JS_AVANZADO/ProyectoFinal_JS/fondoPoke.jpg);
+    background-image: url(fondoPoke.jpg);
     background-size: cover;
+   
 }
 
 input {
@@ -46,12 +48,16 @@ input {
     border-radius: 5px;
     margin: 98px 0 0 5px;
     padding: 5px;
-    width: 40%;
+    width: 55%;
     font-size: 15px;
+    border-left: ;
+    border-top: 400px;
+    
 }
 
 ::placeholder{
     color: white;
+    width: 300px;
 }
 
 .imgAside{
@@ -107,4 +113,27 @@ input {
         margin-bottom: 20px; */
     }
 
+}
+.sabias{
+ padding-top: 21%;
+
+}
+
+.intro_random{
+    padding-left: 14%;
+}
+
+#elementoPadre{
+    padding-left: 21%;
+  
+}
+#pokemon_indiv{
+    padding-top: .5%;
+}
+.contenedor_input{
+    height: 16.5%;
+}
+#input_todo{
+    height: 23%;
+    
 }
