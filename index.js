@@ -1,9 +1,17 @@
 "use strict"
 
+window.sr = ScrollReveal();
+
+sr.reveal('.pokemon_mostrar', {
+    duration: 3000,
+    origin: 'bottom',
+    distance: '-100px'
+});
+
 const input_todo = document.getElementById('input_todo')
 const pokemon_button = document.getElementById('pokemon_indiv')
 
-const url = 'https://pokeapi.co/api/v2/pokemon?limit=102&offset=0'
+const url = 'https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0'
 
 const getData = () => {
     fetch(url)
@@ -18,19 +26,13 @@ const getData = () => {
                         return response.json()
                             .then((response) => {
                                 console.log(response);
-                                // const sprite = document.createElement('img')
-                                // sprite.src = response.sprites.front_default
-                                // const info = document.createElement('div')
-                                // info.innerHTML = response.height
-
                                 const card = document.createElement("div");
-                                card.classList.add("col-md-4", "col-sm-6", "d-flex", "flex-column", "articulo", "p-3", "tarjetas");
+                                card.classList.add("col-md-2", "col-sm-4", "d-flex", "flex-column", "tarjetas");
                                 card.innerHTML = `
-                                <img class="imgPok border border-danger border-4 rounded-4" src="${response.sprites.front_default}">
-                                <h3 class="datosPok"> Name: ${response.name}</h3> 
-                                <h4 class="datosPok"> ID: ${response.id}</h4> 
+                                <img class="imgPok" src="${response.sprites.front_default}">
+                                <h5 class="datosPok"> ID: ${response.id}</h5>
+                                <h4 class="datosPok"> Name: ${response.name}</h4>  
                                 `;               
-                                // pokemon_todo.appendChild(sprite);
                                 pokemon_todo.appendChild(card)       
                             })
                     })
@@ -44,17 +46,35 @@ const getData = () => {
         })
 }
 
-const printPokemon = () => {
-    const btn_search = document.createElement('button')
-    btn_search.classList.add("btn", "btn-primary")
-    btn_search.textContent = 'Search'
+getData()
 
-    btn_search.addEventListener('click', () => {
-        console.log();
-      })
+const entrada = document.getElementById("input_todo");
 
-    pokemon_button.appendChild(btn_search)
+input_todo.addEventListener("keyup",(event) =>{
+    event.preventDefault();
+    buscarPokemon(entrada.value);
+})
+
+function buscarPokemon(pokemon) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
+    // https://pokeapi.co/api/v2/pokemon?limit=102&offset=0
+        .then((response) => response.json())
+        .then((data) => {
+            buscar(data);
+        });
 }
 
-getData()
-printPokemon()
+function buscar(pokemon) {
+    const elementoPadre = document.getElementById("elementoPadre");
+    elementoPadre.innerHTML = "";
+    const elementoHijo = document.createElement("div");
+    elementoHijo.classList.add("d-flex", "flex-column", "mx-auto", "justify-content-center", "align-items-center");
+    
+    elementoHijo.innerHTML = `
+    <img class="imgAside" src="${pokemon.sprites.front_default}">
+    <h4 class="datosPok"> HEIGHT: ${pokemon.height}</h4>
+    <h4 class="datosPok"> WEIGHT: ${pokemon.weight}</h4>
+    `;
+  elementoPadre.appendChild(elementoHijo);
+
+}
