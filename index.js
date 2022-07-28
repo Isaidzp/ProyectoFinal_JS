@@ -49,7 +49,22 @@ const getData = () => {
             console.error(error)
         })
 }
-getData()
+const getRandomAsideWhenLoad = () =>{
+    fetch(url)
+    .then((response) => {
+        return response.json()
+    })
+    .then((data) => {
+        let arrayRandom = Math.floor(Math.random() * data.results.length);
+        buscarPokemon(data.results[arrayRandom].name);
+    })
+    .catch((error) =>{
+        console.error(error);
+    })
+}
+
+getData();
+getRandomAsideWhenLoad();
 
 /*
 let entrada = getElementById("input_todo");
@@ -59,11 +74,12 @@ entrada.addEventListener("input", searchPokemon);
 //printPokemon()
 
 const entrada = document.getElementById("input_todo");
-const boton = document.getElementById("boton");
+//const boton = document.getElementById("boton");
 
-boton.addEventListener("click",(event) =>{
+input_todo.addEventListener("keyup",(event) =>{
     event.preventDefault();
     buscarPokemon(entrada.value);
+    console.log(entrada.value)
 })
 
 

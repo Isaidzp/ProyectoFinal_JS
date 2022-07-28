@@ -46,6 +46,7 @@ input {
     margin: 15px 0 15px 5px;
     padding: 5px;
     width: 70%;
+    padding-left: 20px;
 }
 
 ::placeholder{
@@ -54,4 +55,17 @@ input {
 
 .imgAside{
     width: 200px;
+}
+
+#pokebola{
+    padding-top: 60px;
+padding-left: 120px;
+}
+
+#datocurioso{
+    padding-top: 20px;
+    text-align: justify;
+}
+#input_todo{
+    margin-left: 47px;
 }
