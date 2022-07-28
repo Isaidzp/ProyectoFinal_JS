@@ -79,7 +79,7 @@ const entrada = document.getElementById("input_todo");
 input_todo.addEventListener("keyup",(event) =>{
     event.preventDefault();
     buscarPokemon(entrada.value);
-    console.log(entrada.value)
+    console.log(entrada.value);
 })
 
 
@@ -90,6 +90,11 @@ function buscarPokemon(pokemon) {
         .then((data) => {
             buscar(data);
         });
+    
+}
+
+function no_existe() {
+elementoHijo.innerHTML = `<h7> No se encontro</h7>`
 }
 
 
