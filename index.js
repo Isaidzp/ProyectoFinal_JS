@@ -21,9 +21,11 @@ const getData = () => {
             return response.json()
         })
         .then((data) => {
+            console.log("data results", data.results) //nombre y url
             data.results.forEach(element => {
                 fetch(element.url)
                     .then((response) => {
+                        console.log("response", response); //manda info de la api web
                         return response.json()
                             .then((response) => {
                                 console.log(response);
