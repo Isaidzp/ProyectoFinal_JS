@@ -2,14 +2,14 @@
 
 window.sr = ScrollReveal();
 
-sr.reveal('.pokemon_mostrar', {
-    duration: 3000,
-    origin: 'bottom',
-    distance: '-100px'
-});
+// sr.reveal('.pokemon_mostrar', {
+//     duration: 3000,
+//     origin: 'bottom',
+//     distance: '-100px'
+// });
 
 const input_todo = document.getElementById('input_todo')
-const pokemon_button = document.getElementById('pokemon_indiv')
+// const pokemon_button = document.getElementById('pokemon_indiv')
 
 const url = 'https://pokeapi.co/api/v2/pokemon?limit=102&offset=0'
 
@@ -70,12 +70,16 @@ input_todo.addEventListener("keyup",(event) =>{
 })
 
 function buscarPokemon(pokemon) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
-    // https://pokeapi.co/api/v2/pokemon?limit=102&offset=0
+    if(pokemon == ""){
+        getRandomAsideWhenLoad();
+    }
+    else{
+        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
         .then((response) => response.json())
         .then((data) => {
             buscar(data);
         });
+    }        
 }
 
 function buscar(pokemon) {
@@ -92,5 +96,5 @@ function buscar(pokemon) {
     <h6 class="datosPok"> TYPES: ${pokemon.types[0].type.name}</h6>
     `;
   elementoPadre.appendChild(elementoHijo);
-
+  
 }

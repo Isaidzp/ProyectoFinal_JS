@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Dancing+Script&family=Indie+Flower&family=Merriweather:ital@1&family=Sansita+Swashed&family=Shadows+Into+Light&family=Uchen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Dancing+Script&family=Indie+Flower&family=Merriweather:ital@1&family=Roboto+Slab:wght@200&family=Sansita+Swashed&family=Shadows+Into+Light&family=Uchen&display=swap');
 
 * {
     margin: 0;
@@ -6,8 +6,9 @@
 }
 
 body{
-    font-family: 'Sansita Swashed', cursive;
+    font-family: 'Sansita Swashed', cursive; 
     color: white;
+    background-color: rgb(243, 59, 59);
 }
 
 /* SECTION DONDE SE ENCUENTRAN TODOS LOS POKEMON */
@@ -15,9 +16,10 @@ section {
     width: 70%;
     height: 100vh;
     float: left;
-    background: rgb(255,112,112);
-background: linear-gradient(90deg, rgba(255,112,112,1) 0%, rgba(246,36,36,1) 100%);
+    background: rgb(242,74,74);
+    background: linear-gradient(90deg, rgba(242,74,74,1) 0%, rgba(182,19,19,1) 100%);
     overflow: scroll;
+    border: 2px solid black;
 }
 
 .imgPok {
@@ -35,9 +37,10 @@ aside {
     width: 30%;
     height: 100vh;
     float: right;
-    background-color: #E5D3FB;
-    background-image: url(/JAVASCRIPT/PROYECTO_JS_AVANZADO/ProyectoFinal_JS/fondoPoke.jpg);
+    /* background-color: #E5D3FB; */
+    background-image: url(/JAVASCRIPT/PROYECTO_JS_AVANZADO/ProyectoFinal_JS/fondoPoke\ \(1\).jpg);
     background-size: cover;
+    border: 2px solid black;
 }
 
 input {
