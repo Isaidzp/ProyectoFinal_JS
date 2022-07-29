@@ -8,8 +8,8 @@
 //     distance: '-100px'
 // });
 
-const input_todo = document.getElementById('input_todo')
-const pokemon_button = document.getElementById('pokemon_indiv')
+// const input_todo = document.getElementById('input_todo')
+// const pokemon_button = document.getElementById('pokemon_indiv')
 
 const url = 'https://pokeapi.co/api/v2/pokemon?limit=102&offset=0'
 
@@ -64,13 +64,12 @@ getRandomAsideWhenLoad()
 
 const entrada = document.getElementById("input_todo");
 
-input_todo.addEventListener("keyup",(event) =>{
+entrada.addEventListener("keyup",(event) =>{
     event.preventDefault();
     buscarPokemon(entrada.value);
 })
 
 function buscarPokemon(pokemon) {
-
     if(pokemon == ""){
         getRandomAsideWhenLoad();
     }
@@ -98,5 +97,5 @@ function buscar(pokemon) {
     <h6 class="datosPok"> TYPES: ${pokemon.types[0].type.name}</h6>
     `;
   elementoPadre.appendChild(elementoHijo);
-
+  
 }
