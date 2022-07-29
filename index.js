@@ -1,6 +1,6 @@
 "use strict"
 
-window.sr = ScrollReveal();
+// window.sr = ScrollReveal();
 
 // sr.reveal('.pokemon_mostrar', {
 //     duration: 3000,
@@ -78,6 +78,7 @@ function buscarPokemon(pokemon) {
         .then((response) => response.json())
         .then((data) => {
             buscar(data);
+            
         });
     }        
 }
