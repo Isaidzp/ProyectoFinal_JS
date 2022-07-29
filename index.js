@@ -8,7 +8,7 @@ window.sr = ScrollReveal();
 //     distance: '-100px'
 // });
 
-const input_todo = document.getElementById('input_todo')
+// const input_todo = document.getElementById('input_todo')
 // const pokemon_button = document.getElementById('pokemon_indiv')
 
 const url = 'https://pokeapi.co/api/v2/pokemon?limit=102&offset=0'
@@ -64,7 +64,7 @@ getRandomAsideWhenLoad()
 
 const entrada = document.getElementById("input_todo");
 
-input_todo.addEventListener("keyup",(event) =>{
+entrada.addEventListener("keyup",(event) =>{
     event.preventDefault();
     buscarPokemon(entrada.value);
 })
